@@ -1,0 +1,34 @@
+.add {
+    margin-top: 60px;
+}
+.btn {
+    width: 100px;
+}
+
+.tombol-update {
+    width: 100px;
+    display: inline;
+}
+.tombol-delete {
+    margin-top: 5px;
+    width: 100px;
+}
+.tombol-save-update {
+    width: 100px;
+    display: none;
+}
+table {
+    margin-top: 60px;
+}
+.font {
+    font-size: 20px;
+}
+.buttonActionStudent {
+    visibility: hidden;
+}
+.id-update {
+    width: 50%;
+}
+.bioStudents {
+    display: none;
+}

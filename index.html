@@ -4,9 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Student Management System</title>
+    
 </head>
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold font" href="index.html">Home</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold font" href="studentsdata.html">Students</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="container">
+    <form class="add">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">ID Student</label>
+                  <input id="student-id" onkeypress="return isNumberKey(event)" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID" required>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Address</label>
+                    <input id="address" onkeypress="return isNumericKey(event)" type="text" class="form-control" id="exampleInputPassword1" placeholder="Address" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Fullname</label>
+                    <input id="full-name" onkeypress="return isNumericKey(event)" type="text" class="form-control" id="exampleInputPassword1" placeholder="Fullname" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Password</label>
+                    <input id="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Date Of Birth</label>
+                    <input id="date-of-birth" type="date" class="form-control" id="exampleInputPassword1" placeholder="date" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input id="confirm-password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Confrim Password" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Faculty</label>
+                    <select class="form-control" id="faculty">
+                        <option>Faculty of Law</option>
+                        <option>Faculty of Medical</option>
+                        <option>Faculty of Social Science</option>
+                        <option>Faculty of Arts and Culture</option>
+                        <option>Faculty of Informatics</option>
+                      </select>
+                    <!-- <input id="faculty" onkeypress="return isNumericKey(event)" type="text" class="form-control" id="exampleInputPassword1" placeholder="Faculty" required> -->
+                </div>
+            </div>
+        </div>
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-success" onclick="saveStudents()">Save</button>
+            </div>
+    </form>
+    </div>
 </body>
+<script src="./scripts/scripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </html>
