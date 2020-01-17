@@ -10,81 +10,83 @@
     
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-                <a class="nav-link font-weight-bold font" href="index.html">Home</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold font" href="studentsdata.html">Students</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+
+    <nav class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold font" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-weight-bold font" href="studentsdata.html">Students</a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+    </nav>
+
     <div class="container">
-    <form class="add">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">ID Student</label>
-                  <input id="student-id" onkeypress="return isNumberKey(event)" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ID" required>
+        <form class="form-add-students">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">ID Student</label>
+                    <input id="addStudentId" onkeypress="return isNumberKey(event)" maxlength="10" class="form-control" aria-describedby="emailHelp" placeholder="Enter ID" required>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea class="form-control" id="addAdress" rows="1" placeholder="Address" required></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Fullname</label>
+                        <input id="addFullName" onkeypress="return isNumericKey(event)" maxlength="50" class="form-control" placeholder="Fullname" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input id="addPassword" type="password" class="form-control" placeholder="Password" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Date Of Birth</label>
+                        <input id="addDateOfBirth" type="date" class="form-control" placeholder="date" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input id="addConfirmPassword" type="password" class="form-control" placeholder="Confrim Password" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Faculty</label>
+                        <select class="form-control" id="addFaculty">
+                            <option>Faculty of Law</option>
+                            <option>Faculty of Medical</option>
+                            <option>Faculty of Social Science</option>
+                            <option>Faculty of Arts and Culture</option>
+                            <option>Faculty of Informatics</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Address</label>
-                    <input id="address" onkeypress="return isNumericKey(event)" type="text" class="form-control" id="exampleInputPassword1" placeholder="Address" required>
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-success" onclick="saveStudents()">Save</button>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Fullname</label>
-                    <input id="full-name" onkeypress="return isNumericKey(event)" type="text" class="form-control" id="exampleInputPassword1" placeholder="Fullname" required>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Password</label>
-                    <input id="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Date Of Birth</label>
-                    <input id="date-of-birth" type="date" class="form-control" id="exampleInputPassword1" placeholder="date" required>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Confirm Password</label>
-                    <input id="confirm-password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Confrim Password" required>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>Faculty</label>
-                    <select class="form-control" id="faculty">
-                        <option>Faculty of Law</option>
-                        <option>Faculty of Medical</option>
-                        <option>Faculty of Social Science</option>
-                        <option>Faculty of Arts and Culture</option>
-                        <option>Faculty of Informatics</option>
-                      </select>
-                    <!-- <input id="faculty" onkeypress="return isNumericKey(event)" type="text" class="form-control" id="exampleInputPassword1" placeholder="Faculty" required> -->
-                </div>
-            </div>
-        </div>
-            <div class="col-md-12 text-center">
-                <button type="submit" class="btn btn-success" onclick="saveStudents()">Save</button>
-            </div>
-    </form>
+        </form>
     </div>
 </body>
 <script src="./scripts/scripts.js"></script>

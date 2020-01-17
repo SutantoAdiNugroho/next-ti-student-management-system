@@ -1,19 +1,16 @@
-.add {
+.form-add-students {
     margin-top: 60px;
 }
-.btn {
-    width: 100px;
-}
 
-.tombol-update {
+.btn-update {
     width: 100px;
     display: inline;
 }
-.tombol-delete {
+.btn-delete {
     margin-top: 5px;
     width: 100px;
 }
-.tombol-save-update {
+.btn-update-save {
     width: 100px;
     display: none;
 }
@@ -22,13 +19,4 @@ table {
 }
 .font {
     font-size: 20px;
-}
-.buttonActionStudent {
-    visibility: hidden;
-}
-.id-update {
-    width: 50%;
-}
-.bioStudents {
-    display: none;
 }

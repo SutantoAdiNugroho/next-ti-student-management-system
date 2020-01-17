@@ -9,69 +9,70 @@
     <title>Student Management System</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-                <a class="nav-link font-weight-bold font" href="index.html">Home</a>
+    <nav class="header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link font-weight-bold font" href="index.html">Home</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link font-weight-bold font" href="studentsdata.html">Students</a>
               </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold font" href="studentsdata.html">Students</a>
-            </li>
-          </ul>
-        </div>
+            </ul>
+          </div>
+        </nav>
       </nav>
-    </div>
-<div class="container">
-    <div class="table-responsive">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                  <th scope="col">ID Student</th>
-                  <th scope="col">Fullname</th>
-                  <th scope="col">Faculty</th>
-                  <th scope="col">Date Of Birth</th>
-                  <th scope="col">Address</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr id="id-show-button" class="buttonActionStudent">
-                    <td>
-                      <input id="id-update" onkeypress="return isNumberKey(event)" type="text" class="form-control" disabled required>
-                    </td>
-                    <td>
-                      <input id="fullname-update" onkeypress="return isNumericKey(event)" type="text" class="form-control" disabled required>
-                    </td>
-                    <td>
-                      <select class="form-control" id="faculty-update" disabled>
-                        <option>Faculty of Law</option>
-                        <option>Faculty of Medical</option>
-                        <option>Faculty of Social Science</option>
-                        <option>Faculty of Arts and Culture</option>
-                        <option>Faculty of Informatics</option>
-                      </select>
-                    </td>
-                    <td>
-                      <input id="date-birth-update" type="date" class="form-control" disabled required>
-                    </td>
-                    <td>
-                      <textarea id="address-update" class="form-control" id="exampleFormControlTextarea1" rows="3" disabled></textarea>
-                    </td>
-                      <td >
-                        <button id="btn-update-id" class="btn-primary btn tombol-update" onclick="updateStudents()">Update</button>
-                        <button id="btn-save-update-id" class="btn-success btn tombol-save-update" onclick="saveUpdateStudents()">Save</button>
-                        <button class="btn-danger btn tombol-delete" onclick="deleteStudents()">Delete</button>
-                      </td>
-                </tr>
-              </tbody>
-        </table>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">ID Student</th>
+                      <th scope="col">Fullname</th>
+                      <th scope="col">Faculty</th>
+                      <th scope="col">Date Of Birth</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="tableShowAllData" class="buttonActionStudent">
+                        <td>
+                          <input id="updateIdStudent" onkeypress="return isNumberKey(event)" maxlength="10" class="form-control" disabled required>
+                        </td>
+                        <td>
+                          <input id="updateFullName" onkeypress="return isNumericKey(event)" maxlength="50" class="form-control" disabled required>
+                        </td>
+                        <td>
+                          <select class="form-control" id="updateFaculty" disabled>
+                            <option>Faculty of Law</option>
+                            <option>Faculty of Medical</option>
+                            <option>Faculty of Social Science</option>
+                            <option>Faculty of Arts and Culture</option>
+                            <option>Faculty of Informatics</option>
+                          </select>
+                        </td>
+                        <td>
+                          <input id="updateDateOfBirth" type="date" class="form-control" disabled required>
+                        </td>
+                        <td>
+                          <textarea id="updateAddress" class="form-control"  rows="3" disabled></textarea>
+                        </td>
+                          <td >
+                            <button id="btnUpdate" class="btn-primary btn btn-update" onclick="updateStudents()">Update</button>
+                            <button id="btnSaveUpdate" class="btn-success btn btn-update-save" onclick="saveUpdateStudents()">Save</button>
+                            <button class="btn-danger btn btn-delete" onclick="deleteStudents()">Delete</button>
+                          </td>
+                    </tr>
+                  </tbody>
+            </table>
+          </div>
       </div>
-    </div>
     <script src="./scripts/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

@@ -1,39 +1,45 @@
-var idStudent = document.getElementById('student-id')
-var address = document.getElementById('address')
-var fullName = document.getElementById('full-name')
-var password = document.getElementById('password')
-var dateOfBirth = document.getElementById('date-of-birth')
-var confirmPassword = document.getElementById('confirm-password')
-var faculty = document.getElementById('faculty')
+var saveIdStudent = document.getElementById('addStudentId')
+var saveAddress = document.getElementById('addAdress')
+var saveFullName = document.getElementById('addFullName')
+var savePassword = document.getElementById('addPassword')
+var saveDateOfBirth = document.getElementById('addDateOfBirth')
+var saveConfirmPassword = document.getElementById('addConfirmPassword')
+var saveFaculty = document.getElementById('addFaculty')
 
-var tableIdStudent = document.getElementById('id-update')
-var tableFullName = document.getElementById('fullname-update')
-var tableFaculty = document.getElementById('faculty-update')
-var tableDateOfBirth = document.getElementById('date-birth-update')
-var tableAdress = document.getElementById('address-update')
-var showAllButtonAction = document.getElementById('id-show-button')
-var showAllDataAction = document.getElementById('id-show-data-student')
+var tableIdStudent = document.getElementById('updateIdStudent')
+var tableFullName = document.getElementById('updateFullName')
+var tableFaculty = document.getElementById('updateFaculty')
+var tableDateOfBirth = document.getElementById('updateDateOfBirth')
+var tableAdress = document.getElementById('updateAddress')
+var showAllDataStudent = document.getElementById('tableShowAllData')
 
-var buttonUpdate = document.getElementById('btn-update-id')
-var buttonSaveUpdate = document.getElementById('btn-save-update-id')
+var buttonUpdate = document.getElementById('btnUpdate')
+var buttonSaveUpdate = document.getElementById('btnSaveUpdate')
 
 function saveStudents() {
-    var facultyIndex = faculty.selectedIndex
-    
-    if (idStudent.value == "" || address.value == "" || fullName.value == "" || password.value == "" || dateOfBirth == "" || confirmPassword == "" || faculty == "") {
+    var getFullYearBirth = new Date(saveDateOfBirth.value).getFullYear()
+    var getFullYearNow = new Date().getFullYear()
+    var setAgeNow = getFullYearNow - getFullYearBirth
+
+    if (saveIdStudent.value == "" || saveAddress.value == "" || saveFullName.value == "" || savePassword.value == "" || saveDateOfBirth.value == "" || saveConfirmPassword.value == "" || saveFaculty.value == "") {
         alert("Make sure this data is filled in correctly!")
-    } else if (password.value != confirmPassword.value) {
+    } else if (savePassword.value != saveConfirmPassword.value) {
         alert("Please confirm the password correctly!")
+    } else if (setAgeNow < 18) {
+        alert("Age must be more than 18 years")
+    } else if (setAgeNow > 100) {
+        alert("Please write a specific your age")
     } else {
         alert("Add success")
-        localStorage.setItem("id_student", idStudent.value)
-        localStorage.setItem("address", address.value)
-        localStorage.setItem("fullname", fullName.value)
-        localStorage.setItem("password", password.value)
-        localStorage.setItem("date_of_birth", dateOfBirth.value)
-        localStorage.setItem("confirm_password", confirmPassword.value)
-        localStorage.setItem("faculty", faculty.value)
-        localStorage.setItem("facultyIndex", facultyIndex)
+        localStorage.setItem("id_student", saveIdStudent.value)
+        localStorage.setItem("address", saveAddress.value)
+        localStorage.setItem("fullname", saveFullName.value)
+        localStorage.setItem("password", savePassword.value)
+        localStorage.setItem("date_of_birth", saveDateOfBirth.value)
+        localStorage.setItem("age_now", setAgeNow)
+        localStorage.setItem("confirm_password", saveConfirmPassword.value)
+        localStorage.setItem("faculty", saveFaculty.value)
+        localStorage.setItem("facultyIndex", saveFaculty.selectedIndex)
 
         window.location.href = "../studentsdata.html"
     }
@@ -42,18 +48,15 @@ function saveStudents() {
 function showStudents() {
     const isCreate = localStorage.getItem('id_student');
 
-    tableIdStudent.defaultValue = localStorage.getItem('id_student')
-    tableFullName.defaultValue = localStorage.getItem('fullname')
-    tableFaculty.selectedIndex = localStorage.getItem('facultyIndex')
-    tableDateOfBirth.defaultValue = localStorage.getItem('date_of_birth')
-    tableAdress.defaultValue = localStorage.getItem('address')
-
     if (!isCreate) {
-        showAllButtonAction.style.visibility = "hidden"
-        showAllDataAction.style.visibility = "hidden"
+        showAllDataStudent.style.visibility = "hidden"
     } else {
-        showAllButtonAction.style.visibility = "visible"
-        showAllDataAction.style.visibility = "visible"
+        showAllDataStudent.style.visibility = "visible"
+        tableIdStudent.defaultValue = localStorage.getItem('id_student')
+        tableFullName.defaultValue = localStorage.getItem('fullname')
+        tableFaculty.selectedIndex = localStorage.getItem('facultyIndex')
+        tableDateOfBirth.defaultValue = localStorage.getItem('date_of_birth')
+        tableAdress.defaultValue = localStorage.getItem('address')
     }
 }
 
@@ -69,8 +72,16 @@ function updateStudents() {
 }
 
 function saveUpdateStudents() {
+    var getFullYearBirth = new Date(tableDateOfBirth.value).getFullYear()
+    var getFullYearNow = new Date().getFullYear()
+    var setAgeNow = getFullYearNow - getFullYearBirth
+
     if (tableIdStudent.value == "" || tableFullName.value == "" || tableFaculty.value == "" || tableDateOfBirth.value == "" || tableAdress.value == "") {
         alert("Make sure this data is filled in correctly!")
+    } else if (setAgeNow < 18) {
+        alert("Age must be more than 18 years")
+    } else if (setAgeNow > 100) {
+        alert("Please write a specific your age")
     } else {
         alert("Success update data")
         tableIdStudent.disabled = true
